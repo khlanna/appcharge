@@ -54,7 +54,6 @@ A Next.js mini storefront using the Fake Store API, with dynamic product preview
 ### Open Graph Images
 
 - OG images are generated dynamically via an API route using `@vercel/og` for rich social sharing previews.
-- The OG image URL uses `NEXT_PUBLIC_BASE_URL` so it works in both local and production environments.
 
 ### Known Limitations
 
