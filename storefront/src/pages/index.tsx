@@ -18,6 +18,30 @@ export default function Home({ products }: HomeProps) {
           content="Browse our collection of amazing products"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Mini Storefront - Products" />
+        <meta
+          property="og:description"
+          content="Browse our collection of amazing products"
+        />
+        <meta
+          property="og:image"
+          content={`${
+            process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+          }/api/og?title=Mini Storefront - Products`}
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mini Storefront - Products" />
+        <meta
+          name="twitter:description"
+          content="Browse our collection of amazing products"
+        />
+        <meta
+          name="twitter:image"
+          content={`${
+            process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+          }/api/og?title=Mini Storefront - Products`}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
