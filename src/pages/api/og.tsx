@@ -1,17 +1,15 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
-export const config = {
-  runtime: "edge",
-};
+export const config = { runtime: "edge" };
 
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get("title");
     const price = searchParams.get("price");
-    const image = searchParams.get("image"); // "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg";
-    console.log({ imiage: searchParams.get("image") });
+    const image = searchParams.get("image");
+
     if (!title) {
       return new ImageResponse(
         (
