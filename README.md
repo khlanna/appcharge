@@ -4,10 +4,6 @@
 
 Live Demo: [https://appcharge-alpha.vercel.app](https://appcharge-alpha.vercel.app)
 
----
-
-**Note:** I used Open Graph image generation and ShadCN/UI for the first time, so some solutions may not be optimal. Feedback and suggestions for improvement are welcome!
-
 # Mini Storefront (Appcharge Home Assignment)
 
 A Next.js mini storefront using the Fake Store API, with dynamic product previews, Open Graph images, and modern UI/UX.
@@ -58,12 +54,14 @@ A Next.js mini storefront using the Fake Store API, with dynamic product preview
 ### Open Graph Images
 
 - OG images are generated dynamically via an API route using `@vercel/og` for rich social sharing previews.
+- The OG image URL uses `NEXT_PUBLIC_BASE_URL` so it works in both local and production environments.
 
 ### Known Limitations
 
 - **Localhost OG images** cannot be previewed on Facebook/Twitter; you must deploy to a public URL to test social sharing.
 - **No client-side search/filter**: All product fetching is server-side for simplicity.
 - **No persistent cart or checkout**: This is a demo storefront, not a full e-commerce solution.
+- **No unit tests included**: I did not have time to write unit tests because I needed to learn how Open Graph image generation works and how to use ShadCN/UI components for the first time.
 
 ---
 
@@ -76,3 +74,7 @@ A Next.js mini storefront using the Fake Store API, with dynamic product preview
 - Fake Store API
 
 ---
+
+## 💡 Further Improvements
+
+- Add tests and CI
