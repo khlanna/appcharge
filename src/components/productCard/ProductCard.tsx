@@ -1,12 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/product";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Rating } from "@/components/ui/rating";
@@ -17,8 +11,9 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Card className="h-full flex flex-col">
-      <CardHeader className="p-4 pb-2">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 h-full flex flex-col">
+      {/* Image Section */}
+      <div className="p-4 pb-2">
         <div className="relative aspect-square w-full overflow-hidden rounded-lg">
           <Image
             src={product.image}
@@ -28,13 +23,15 @@ export default function ProductCard({ product }: ProductCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
-      </CardHeader>
-      <CardContent className="flex-1 p-4 pt-2">
+      </div>
+
+      {/* Content Section */}
+      <div className="flex-1 p-4 pt-2">
         <div className="space-y-2">
           <Badge variant="secondary" className="text-xs">
             {product.category}
           </Badge>
-          <h3 className="font-semibold text-sm line-clamp-2">
+          <h3 className="font-semibold text-sm line-clamp-2 text-gray-900">
             {product.title}
           </h3>
           <Rating
@@ -46,12 +43,14 @@ export default function ProductCard({ product }: ProductCardProps) {
             ${product.price.toFixed(2)}
           </p>
         </div>
-      </CardContent>
-      <CardFooter className="p-4 pt-0">
+      </div>
+
+      {/* Button Section */}
+      <div className="p-4 pt-0">
         <Button asChild className="w-full">
           <Link href={`/products/${product.id}`}>View Details</Link>
         </Button>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }
