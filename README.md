@@ -55,6 +55,7 @@ A Next.js mini storefront using the Fake Store API, with dynamic product preview
 - **Localhost OG images** cannot be previewed on Facebook/Twitter; you must deploy to a public URL to test social sharing.
 - **No client-side search/filter**: All product fetching is server-side for simplicity.
 - **No persistent cart or checkout**: This is a demo storefront, not a full e-commerce solution.
+- **No unit tests included**: I did not have time to write unit tests because I needed to learn how Open Graph image generation works and how to use ShadCN/UI components for the first time.
 
 ---
 
