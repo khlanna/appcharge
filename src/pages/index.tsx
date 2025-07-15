@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { Product } from "@/types/product";
 import { getAllProducts } from "@/lib/api";
-import HomePage from "@/components/home/HomePage";
+import HomePage from "@/components/HomePage";
 
 interface HomeProps {
   products: Product[];
