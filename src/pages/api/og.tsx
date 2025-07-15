@@ -4,6 +4,8 @@ import { NextRequest } from "next/server";
 export const config = { runtime: "edge" };
 
 export default async function handler(req: NextRequest) {
+  const image = "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"; // Known public image
+
   return new ImageResponse(
     (
       <div
@@ -13,12 +15,15 @@ export default async function handler(req: NextRequest) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#f00",
-          color: "#fff",
-          fontSize: 64,
+          background: "#fff",
         }}
       >
-        TEST
+        <img
+          src={image}
+          width={400}
+          height={400}
+          style={{ objectFit: "cover", borderRadius: 16 }}
+        />
       </div>
     ),
     { width: 1200, height: 630 }
