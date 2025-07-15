@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Rating } from "@/components/ui/rating";
 import { Skeleton } from "@/components/ui/skeleton";
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 interface ProductDetailInfoProps {
   category?: string;
@@ -20,6 +21,18 @@ export function ProductDetailInfo({
   price,
   isLoading,
 }: ProductDetailInfoProps) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (err) {
+      // Optionally handle error
+    }
+  };
+
   return (
     <div>
       {isLoading ? (
@@ -31,9 +44,19 @@ export function ProductDetailInfo({
         </>
       ) : (
         <>
-          <Badge variant="secondary" className="mb-2">
-            {category}
-          </Badge>
+          <div className="flex items-center justify-between mb-2">
+            <Badge variant="secondary">{category}</Badge>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleCopyLink}
+              type="button"
+              aria-label="Copy product link"
+              className="text-gray-900 px-2"
+            >
+              {copied ? "Link Copied!" : "Copy Link"}
+            </Button>
+          </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">{title}</h2>
           <div className="mb-4">
             <Rating rate={rate || 0} count={count || 0} size="lg" />
