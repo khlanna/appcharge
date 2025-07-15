@@ -10,7 +10,7 @@ interface ProductDetailProps {
   product: Product;
 }
 
-export default function ProductDetail({ product }: ProductDetailProps) {
+export default function ProductDetailPage({ product }: ProductDetailProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       <ProductDetailHeader title="Product Details" />

@@ -5,7 +5,7 @@ import { ProductDetailDescription } from "@/components/productDetails/ProductDet
 import { ProductDetailSpecs } from "@/components/productDetails/ProductDetailSpecs";
 import { ProductDetailActions } from "@/components/productDetails/ProductDetailActions";
 
-export default function ProductDetailSkeleton() {
+export default function ProductDetailPageSkeleton() {
   return (
     <div className="min-h-screen bg-gray-50">
       <ProductDetailHeader isLoading />

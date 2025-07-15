@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { Product } from "@/types/product";
 import { getAllProducts, getProductById } from "@/lib/api";
-import ProductDetail from "@/components/ProductDetail";
-import ProductDetailSkeleton from "@/components/ProductDetailSkeleton";
+import ProductDetailPage from "@/components/ProductDetailPage";
+import ProductDetailPageSkeleton from "@/components/ProductDetailPageSkeleton";
 
 interface ProductPageProps {
   product: Product;
@@ -15,7 +15,7 @@ export default function ProductPage({ product }: ProductPageProps) {
 
   // Show loading state while page is being generated
   if (router.isFallback) {
-    return <ProductDetailSkeleton />;
+    return <ProductDetailPageSkeleton />;
   }
 
   return (
@@ -28,7 +28,7 @@ export default function ProductPage({ product }: ProductPageProps) {
         <meta
           property="og:image"
           content={`${
-            process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+            process.env.NEXT_PUBLIC_BASE_URL
           }/api/og?title=${encodeURIComponent(product.title)}&price=${
             product.price
           }&image=${encodeURIComponent(product.image)}`}
@@ -40,14 +40,14 @@ export default function ProductPage({ product }: ProductPageProps) {
         <meta
           name="twitter:image"
           content={`${
-            process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+            process.env.NEXT_PUBLIC_BASE_URL
           }/api/og?title=${encodeURIComponent(product.title)}&price=${
             product.price
           }&image=${encodeURIComponent(product.image)}`}
         />
       </Head>
 
-      <ProductDetail product={product} />
+      <ProductDetailPage product={product} />
     </>
   );
 }

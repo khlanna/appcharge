@@ -1,6 +1,6 @@
 import { Product } from "@/types/product";
 
-const BASE_URL = "https://fakestoreapi.com";
+const BASE_URL = process.env.API_BASE_URL;
 
 export async function getAllProducts(): Promise<Product[]> {
   try {
