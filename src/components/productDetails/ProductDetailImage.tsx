@@ -1,6 +1,6 @@
+import React from "react";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
-import React from "react";
 
 interface ProductDetailImageProps {
   src?: string;

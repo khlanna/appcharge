@@ -6,4 +6,8 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/src/$1",
     "^.+\\.(css|scss|sass)$": "identity-obj-proxy",
   },
+  transform: {
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+  },
+  testMatch: ["**/?(*.)+(test).[tj]s?(x)"],
 };

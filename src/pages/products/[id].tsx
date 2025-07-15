@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { Product } from "@/types/product";
 import { getAllProducts, getProductById } from "@/lib/api";
-import ProductDetailPage from "@/components/ProductDetailPage";
-import ProductDetailPageSkeleton from "@/components/ProductDetailPageSkeleton";
+import ProductDetailPage from "@/components/product/ProductDetailPage";
+import ProductDetailPageSkeleton from "@/components/product/ProductDetailPageSkeleton";
 
 interface ProductPageProps {
   product: Product;

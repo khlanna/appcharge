@@ -1,3 +1,5 @@
+import React from "react";
+
 interface RatingProps {
   rate: number;
   count: number;

@@ -1,7 +1,7 @@
+import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Rating } from "@/components/ui/rating";
 import { Skeleton } from "@/components/ui/skeleton";
-import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 interface ProductDetailInfoProps {
