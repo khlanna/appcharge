@@ -1,3 +1,4 @@
+import React from "react";
 import { ProductDetailHeader } from "@/components/productDetails/ProductDetailHeader";
 import { ProductDetailImage } from "@/components/productDetails/ProductDetailImage";
 import { ProductDetailInfo } from "@/components/productDetails/ProductDetailInfo";
