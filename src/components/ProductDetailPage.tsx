@@ -3,7 +3,6 @@ import { ProductDetailHeader } from "@/components/productDetails/ProductDetailHe
 import { ProductDetailImage } from "@/components/productDetails/ProductDetailImage";
 import { ProductDetailInfo } from "@/components/productDetails/ProductDetailInfo";
 import { ProductDetailDescription } from "@/components/productDetails/ProductDetailDescription";
-import { ProductDetailSpecs } from "@/components/productDetails/ProductDetailSpecs";
 import { ProductDetailActions } from "@/components/productDetails/ProductDetailActions";
 
 interface ProductDetailProps {
@@ -26,11 +25,6 @@ export default function ProductDetailPage({ product }: ProductDetailProps) {
               price={product.price}
             />
             <ProductDetailDescription description={product.description} />
-            <ProductDetailSpecs
-              category={product.category}
-              rate={product.rating.rate}
-              count={product.rating.count}
-            />
             <ProductDetailActions />
           </div>
         </div>

@@ -2,7 +2,6 @@ import { ProductDetailHeader } from "@/components/productDetails/ProductDetailHe
 import { ProductDetailImage } from "@/components/productDetails/ProductDetailImage";
 import { ProductDetailInfo } from "@/components/productDetails/ProductDetailInfo";
 import { ProductDetailDescription } from "@/components/productDetails/ProductDetailDescription";
-import { ProductDetailSpecs } from "@/components/productDetails/ProductDetailSpecs";
 import { ProductDetailActions } from "@/components/productDetails/ProductDetailActions";
 
 export default function ProductDetailPageSkeleton() {
@@ -15,7 +14,6 @@ export default function ProductDetailPageSkeleton() {
           <div className="space-y-6">
             <ProductDetailInfo isLoading />
             <ProductDetailDescription isLoading />
-            <ProductDetailSpecs isLoading />
             <ProductDetailActions isLoading />
           </div>
         </div>
