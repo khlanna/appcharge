@@ -1,3 +1,9 @@
+# Appcharge Storefront
+
+[![Vercel](https://vercel.com/button)](https://appcharge-alpha.vercel.app)
+
+Live Demo: [https://appcharge-alpha.vercel.app](https://appcharge-alpha.vercel.app)
+
 # Mini Storefront (Appcharge Home Assignment)
 
 A Next.js mini storefront using the Fake Store API, with dynamic product previews, Open Graph images, and modern UI/UX.
