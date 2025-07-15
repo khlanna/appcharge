@@ -10,8 +10,7 @@ export default async function handler(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const title = searchParams.get("title");
     const price = searchParams.get("price");
-    const image = "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg";
-    // "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"; //searchParams.get("image");
+    const image = searchParams.get("image"); // "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg";
     console.log({ imiage: searchParams.get("image") });
     if (!title) {
       return new ImageResponse(
