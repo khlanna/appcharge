@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Rating } from "@/components/ui/rating";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/Badge";
+import { Rating } from "@/components/ui/Rating";
+import { Skeleton } from "@/components/ui/Skeleton";
+import { Button } from "@/components/ui/Button";
 
 interface ProductDetailInfoProps {
   category?: string;

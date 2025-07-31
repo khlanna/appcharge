@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types/product";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Rating } from "@/components/ui/rating";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Rating } from "@/components/ui/Rating";
 
 interface ProductCardProps {
   product: Product;
