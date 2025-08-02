@@ -19,15 +19,36 @@ describe("ProductDetailPage", () => {
 
   it("renders product details", () => {
     render(<ProductDetailPage product={mockProduct} />);
-    expect(screen.getByText("Product Details")).toBeInTheDocument();
-    expect(screen.getByText(mockProduct.title)).toBeInTheDocument();
+
+    // Check that the product title is rendered in the header (h1)
+    expect(
+      screen.getByRole("heading", { level: 1, name: mockProduct.title })
+    ).toBeInTheDocument();
+
+    // Check that the category is displayed
     expect(screen.getByText(mockProduct.category)).toBeInTheDocument();
+
+    // Check that the price is displayed
     expect(
       screen.getByText(`$${mockProduct.price.toFixed(2)}`)
     ).toBeInTheDocument();
+
+    // Check that the description is displayed
     expect(screen.getByText(mockProduct.description)).toBeInTheDocument();
+
+    // Check that the "Add to Cart" button is present
     expect(
-      screen.getByRole("button", { name: /copy product link/i })
+      screen.getByRole("button", { name: /add to cart/i })
+    ).toBeInTheDocument();
+
+    // Check that the "Continue Shopping" link is present
+    expect(
+      screen.getByRole("link", { name: /continue shopping/i })
+    ).toBeInTheDocument();
+
+    // Check that the "Back to Products" link is present
+    expect(
+      screen.getByRole("link", { name: /back to products/i })
     ).toBeInTheDocument();
   });
 });

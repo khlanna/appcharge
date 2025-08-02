@@ -22,7 +22,7 @@ export default function ProductPage({ product }: ProductPageProps) {
   return (
     <>
       <Head>
-        <title>{product.title} - Mini Storefront</title>
+        <title>{`${product.title} - Mini Storefront`}</title>
         <meta name="description" content={product.description} />
         <meta property="og:title" content={product.title} />
         <meta property="og:description" content={product.description} />
