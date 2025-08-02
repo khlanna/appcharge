@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       props: {
         products,
       },
-      revalidate: 3600, // Revalidate every hour
+      revalidate: 3600, // Revalidate every hour,  Old page served while new one generates
     };
   } catch (error) {
     console.error("Error fetching products:", error);
