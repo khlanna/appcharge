@@ -106,8 +106,8 @@ test.describe("Homepage", () => {
     const countText = await productCountText.textContent();
     const displayedCount = parseInt(countText?.match(/\d+/)?.[0] || "0");
 
-    // Should show 0 products when API fails
-    expect(displayedCount).toBe(0);
+    // Should show products (SSG pre-rendered at build time)
+    expect(displayedCount).toBeGreaterThan(0);
 
     // Page should still have content
     const pageText = await pageContent.textContent();
