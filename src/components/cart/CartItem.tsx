@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/Button";
 import { Plus, Minus, Trash2 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
-import { CartItem as CartItemType } from "@/store/cart-store";
+import { CartItem as CartItemType } from "@/types/cart";
 import Image from "next/image";
 
 interface CartItemProps {

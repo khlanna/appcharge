@@ -2,7 +2,7 @@ import React from "react";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
-import { useCartStore } from "@/store";
+import { useCartStore } from "@/store/cart-store";
 
 interface ProductDetailActionsProps {
   isLoading?: boolean;
