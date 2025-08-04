@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "@/types/product";
 import ProductCard from "@/components/productCard/ProductCard";
+import { Cart } from "@/components/cart/Cart";
 
 interface HomePageProps {
   products: Product[];
@@ -16,8 +17,11 @@ export default function HomePage({ products }: HomePageProps) {
             <h1 className="text-3xl font-bold text-gray-900">
               Mini Storefront
             </h1>
-            <div className="text-sm text-gray-500">
-              {products.length} products available
+            <div className="flex items-center space-x-4">
+              <div className="text-sm text-gray-500">
+                {products.length} products available
+              </div>
+              <Cart />
             </div>
           </div>
         </div>

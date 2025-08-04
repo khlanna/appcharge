@@ -26,7 +26,14 @@ export default function ProductDetailPage({ product }: ProductDetailProps) {
               price={product.price}
             />
             <ProductDetailDescription description={product.description} />
-            <ProductDetailActions />
+            <ProductDetailActions
+              product={{
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                image: product.image,
+              }}
+            />
           </div>
         </div>
       </main>
