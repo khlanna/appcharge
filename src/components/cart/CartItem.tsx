@@ -13,7 +13,7 @@ export function CartItem({ item }: CartItemProps) {
   const { incrementQuantity, decrementQuantity, removeItem } = useCartStore();
 
   return (
-    <div className="flex items-center space-x-4 p-4 border rounded-lg">
+    <div className="flex items-center space-x-4 p-4 border border-gray-200 rounded-lg bg-gray-50">
       <div className="relative w-16 h-16 flex-shrink-0">
         <Image
           src={item.image}
@@ -36,7 +36,7 @@ export function CartItem({ item }: CartItemProps) {
         >
           <Minus className="h-3 w-3" />
         </Button>
-        <span className="text-sm font-medium w-8 text-center">
+        <span className="text-sm font-medium w-8 text-center text-gray-900">
           {item.quantity}
         </span>
         <Button

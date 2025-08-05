@@ -39,6 +39,7 @@ export default function Home({ products }: HomeProps) {
           name="twitter:image"
           content={`${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=Mini Storefront - Products`}
         />
+        <meta name="twitter:image:alt" content="Mini Storefront products" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

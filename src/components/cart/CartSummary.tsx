@@ -6,10 +6,10 @@ export function CartSummary() {
   const { getTotalPrice } = useCartStore();
 
   return (
-    <div className="border-t pt-4">
+    <div className="border-t border-gray-200 pt-4">
       <div className="flex justify-between items-center mb-4">
-        <span className="text-lg font-semibold">Total:</span>
-        <span className="text-lg font-semibold">
+        <span className="text-lg font-semibold text-gray-900">Total:</span>
+        <span className="text-lg font-semibold text-gray-900">
           ${getTotalPrice().toFixed(2)}
         </span>
       </div>

@@ -29,6 +29,7 @@ export function ProductDetailInfo({
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch (err) {
+      console.error(err);
       // Optionally handle error
     }
   };
