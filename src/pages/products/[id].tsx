@@ -30,7 +30,7 @@ export default function ProductPage({ product }: ProductPageProps) {
           property="og:image"
           content={`${
             process.env.NEXT_PUBLIC_BASE_URL
-          }api/og?title=${encodeURIComponent(product.title)}&price=${
+          }/api/og?title=${encodeURIComponent(product.title)}&price=${
             product.price
           }&image=${encodeURIComponent(product.image)}`}
         />
@@ -42,7 +42,7 @@ export default function ProductPage({ product }: ProductPageProps) {
           name="twitter:image"
           content={`${
             process.env.NEXT_PUBLIC_BASE_URL
-          }api/og?title=${encodeURIComponent(product.title)}&price=${
+          }/api/og?title=${encodeURIComponent(product.title)}&price=${
             product.price
           }&image=${encodeURIComponent(product.image)}`}
         />
