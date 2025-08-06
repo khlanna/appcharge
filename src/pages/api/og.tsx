@@ -11,17 +11,6 @@ export default async function handler(req: NextRequest) {
     const price = searchParams.get("price");
     const image = searchParams.get("image");
 
-    // // Detect if request is from WhatsApp
-    // const userAgent = req.headers.get("user-agent") || "";
-    // const isWhatsApp =
-    //   userAgent.includes("WhatsApp") ||
-    //   userAgent.includes("facebookexternalhit");
-
-    // // Use square dimensions for WhatsApp, standard for others
-    // const imageSize = isWhatsApp
-    //   ? { width: 600, height: 600 }
-    //   : { width: 1200, height: 630 };
-
     if (!title) {
       return new ImageResponse(
         (
