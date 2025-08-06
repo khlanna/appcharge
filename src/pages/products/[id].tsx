@@ -29,7 +29,7 @@ export default function ProductPage({ product }: ProductPageProps) {
         <meta
           property="og:image"
           content={`${
-            process.env.NEXT_PUBLIC_BASE_URL
+            process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "") || ""
           }/api/og?title=${encodeURIComponent(product.title)}&price=${
             product.price
           }&image=${encodeURIComponent(product.image)}`}
@@ -41,7 +41,7 @@ export default function ProductPage({ product }: ProductPageProps) {
         <meta
           name="twitter:image"
           content={`${
-            process.env.NEXT_PUBLIC_BASE_URL
+            process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "") || ""
           }/api/og?title=${encodeURIComponent(product.title)}&price=${
             product.price
           }&image=${encodeURIComponent(product.image)}`}
