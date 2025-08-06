@@ -26,7 +26,9 @@ export default function Home({ products }: HomeProps) {
         />
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=Mini Storefront - Products`}
+          content={`${
+            process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "") || ""
+          }/api/og?title=Mini Storefront - Products`}
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +39,9 @@ export default function Home({ products }: HomeProps) {
         />
         <meta
           name="twitter:image"
-          content={`${process.env.NEXT_PUBLIC_BASE_URL}/api/og?title=Mini Storefront - Products`}
+          content={`${
+            process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "") || ""
+          }/api/og?title=Mini Storefront - Products`}
         />
         <meta name="twitter:image:alt" content="Mini Storefront products" />
         <link rel="icon" href="/favicon.ico" />

@@ -11,6 +11,21 @@ export default async function handler(req: NextRequest) {
     const price = searchParams.get("price");
     const image = searchParams.get("image");
 
+    // Validate image URL to prevent crashes
+    let validImageUrl = null;
+    if (image) {
+      try {
+        const imageUrl = new URL(image);
+        // Only allow https URLs for security
+        if (imageUrl.protocol === "https:") {
+          validImageUrl = image;
+        }
+      } catch {
+        console.log("Invalid image URL:", image);
+        validImageUrl = null;
+      }
+    }
+
     if (!title) {
       return new ImageResponse(
         (
@@ -68,10 +83,10 @@ export default async function handler(req: NextRequest) {
               paddingRight: "40px",
             }}
           >
-            {image && (
+            {validImageUrl ? (
               <img
-                src={image}
-                alt={title}
+                src={validImageUrl}
+                alt={title || "Product"}
                 style={{
                   width: "300px",
                   height: "300px",
@@ -80,6 +95,23 @@ export default async function handler(req: NextRequest) {
                   border: "1px solid #e5e7eb",
                 }}
               />
+            ) : (
+              <div
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  backgroundColor: "#f3f4f6",
+                  borderRadius: "12px",
+                  border: "1px solid #e5e7eb",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "18px",
+                  color: "#6b7280",
+                }}
+              >
+                No Image
+              </div>
             )}
           </div>
 
