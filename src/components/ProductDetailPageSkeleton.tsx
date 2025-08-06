@@ -1,14 +1,31 @@
 import React from "react";
-import { ProductDetailHeader } from "@/components/productDetails/ProductDetailHeader";
-import { ProductDetailImage } from "@/components/productDetails/ProductDetailImage";
-import { ProductDetailInfo } from "@/components/productDetails/ProductDetailInfo";
-import { ProductDetailDescription } from "@/components/productDetails/ProductDetailDescription";
-import { ProductDetailActions } from "@/components/productDetails/ProductDetailActions";
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { Skeleton } from "@/components/ui/Skeleton";
+import { Header } from "@/components/layout";
+import {
+  ProductDetailImage,
+  ProductDetailInfo,
+  ProductDetailDescription,
+  ProductDetailActions,
+} from "@/components/productDetails";
 
 export default function ProductDetailPageSkeleton() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <ProductDetailHeader isLoading />
+      <Header>
+        <div className="flex items-center">
+          <Button
+            variant="ghost"
+            asChild
+            className="mr-4 text-gray-400"
+            disabled
+          >
+            <Link href="/">← Back to Products</Link>
+          </Button>
+          <Skeleton className="h-8 w-48" />
+        </div>
+      </Header>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <ProductDetailImage isLoading />
